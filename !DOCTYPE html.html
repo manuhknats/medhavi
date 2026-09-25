@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ManuDev Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #111827;
+    background: #fff;
+}
+
+/* Navbar */
+nav {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #087ff5;
+}
+
+.logo span {
+    color: #111827;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #111827;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #087ff5;
+}
+
+/* Hero */
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    color: white;
+    background:
+        linear-gradient(rgba(5,15,30,.78), rgba(5,15,30,.78)),
+        url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h4 {
+    font-size: 22px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.hero h1 span {
+    color: #087ff5;
+}
+
+.hero h2 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #087ff5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Common section */
+section {
+    padding: 55px 10%;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.title span {
+    color: #087ff5;
+}
+
+/* Skills */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3 {
+    margin: 12px 0;
+}
+
+.icon {
+    font-size: 40px;
+}
+
+/* About */
+.about {
+    background: #eef6ff;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* Projects */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project {
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project p {
+    line-height: 1.6;
+}
+
+/* Contact */
+.contact {
+    background: #eef6ff;
+}
+
+form {
+    max-width: 800px;
+    margin: auto;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #087ff5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    color: #087ff5;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #111827;
+    color: white;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 7%;
+    }
+
+    section {
+        padding: 45px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">Manu<span>Dev</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h4>Hello, I'm</h4>
+
+        <h1>Manu <span>H K</span></h1>
+
+        <h2>Python Developer | QA Automation</h2>
+
+        <p>
+            I build web applications and automation solutions
+            using Python, Django and Playwright.
+        </p>
+
+        <a href="#projects" class="btn">View My Work ↓</a>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+
+    <h2 class="title">My <span>Skills</span></h2>
+
+    <div class="skills">
+
+        <div class="card">
+            <div class="icon">🐍</div>
+            <h3>Python</h3>
+            <p>Python programming and automation.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Django</h3>
+            <p>Building backend web applications.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎭</div>
+            <h3>Playwright</h3>
+            <p>Web automation and testing.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🗄️</div>
+            <h3>Database</h3>
+            <p>SQL and database management.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+
+    <h2 class="title">About <span>Me</span></h2>
+
+    <p>
+        I am a BCA graduate with an interest in Python development,
+        Django web development and QA automation.
+        I enjoy building real-world projects and learning new technologies.
+    </p>
+
+    <a href="#" class="btn">Download Resume</a>
+
+</section>
+
+<!-- Projects -->
+<section id="projects">
+
+    <h2 class="title">My <span>Projects</span></h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Employee Management System</h3>
+
+            <p>
+                Django-based website for managing employees,
+                departments and attendance.
+            </p>
+
+            <a href="#" class="btn">View Project →</a>
+        </div>
+
+        <div class="project">
+            <h3>Playwright Automation Framework</h3>
+
+            <p>
+                Python Playwright automation framework
+                with Pytest for web application testing.
+            </p>
+
+            <a href="#" class="btn">View Project →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+
+    <h2 class="title">Contact <span>Me</span></h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <textarea
+            id="userMessage"
+            placeholder="Your Message"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+        <p id="message"></p>
+
+    </form>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Manu H K. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Contact form
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message");
+
+        message.textContent =
+            "Thank you, " + name + "! Your message was submitted.";
+
+        this.reset();
+    });
+
+
+// Navbar active link
+const links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        links.forEach(item => {
+            item.style.color = "#111827";
+        });
+
+        this.style.color = "#087ff5";
+    });
+
+});
+
+</script>
+
+</body>
+</html>
